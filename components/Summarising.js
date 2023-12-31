@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import DocumentViewer from './DocumentViewer';
+import RadioButtons from './RadioButtons';
 
 const Summarising = () => {
   const [question, setQuestion] = useState('');
@@ -26,7 +27,8 @@ const Summarising = () => {
       <h3>Summary</h3>
       <label>
         Document Name:
-        <input type="text" value={question} onChange={(e) => setQuestion(e.target.value)} />
+        {/* <input type="text" value={question} onChange={(e) => setQuestion(e.target.value)} /> */}
+        <RadioButtons setQuestion={setQuestion} question={question}/>        
       </label>
       <button onClick={handleQuestionSubmit} disabled={loading}>
         {loading ? 'Loading...' : 'Submit'}
