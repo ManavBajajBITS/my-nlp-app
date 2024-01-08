@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import DocumentViewer from './DocumentViewer';
-import RadioButtons from './RadioButtons';
+import SelectDropdown from './SelectDropdown';
 
 const Summarising = () => {
   const [question, setQuestion] = useState('');
@@ -13,6 +13,7 @@ const Summarising = () => {
     try {
       setLoading(true);
       setDocName(question);
+      console.log("question123", question)
       const response = await axios.get(`http://localhost:8000/summarize/${question}`);
       setAnswer(response.data.summary);
     } catch (error) {
@@ -28,7 +29,9 @@ const Summarising = () => {
       <label>
         Document Name:
         {/* <input type="text" value={question} onChange={(e) => setQuestion(e.target.value)} /> */}
-        <RadioButtons setQuestion={setQuestion} question={question}/>        
+        {/*<RadioButtons setQuestion={setQuestion} question={question}/>  */}
+        <SelectDropdown setQuestion={setQuestion} question={question}/>  
+        {console.log("question222", question)}      
       </label>
       <button onClick={handleQuestionSubmit} disabled={loading}>
         {loading ? 'Loading...' : 'Submit'}
