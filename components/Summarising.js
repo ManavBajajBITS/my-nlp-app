@@ -25,15 +25,16 @@ const Summarising = () => {
 
   return (
     <div>
-      <h3>Summary</h3>
-      <label>
+      <h3 className="text-lg text-gray-600 mb-8">Summary</h3>
+      <label className="text-lg text-gray-600 mb-8">
         Document Name:
         {/* <input type="text" value={question} onChange={(e) => setQuestion(e.target.value)} /> */}
         {/*<RadioButtons setQuestion={setQuestion} question={question}/>  */}
         <SelectDropdown setQuestion={setQuestion} question={question}/>  
         {console.log("question222", question)}      
       </label>
-      <button onClick={handleQuestionSubmit} disabled={loading}>
+      {/*<button onClick={handleQuestionSubmit} disabled={loading}>*/}
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={handleQuestionSubmit} disabled={loading}>
         {loading ? 'Loading...' : 'Submit'}
       </button>
       {answer && (
