@@ -25,7 +25,7 @@ const Summarising = () => {
 
   return (
     <div>
-      <h3 className="text-lg text-gray-600 mb-8">Summary</h3>
+      <h3 className="text-lg text-gray-600 mb-2 font-bold">Summary Generator</h3>
       <label className="text-lg text-gray-600 mb-8">
         Document Name:
         {/* <input type="text" value={question} onChange={(e) => setQuestion(e.target.value)} /> */}
@@ -34,7 +34,7 @@ const Summarising = () => {
         {console.log("question222", question)}      
       </label>
       {/*<button onClick={handleQuestionSubmit} disabled={loading}>*/}
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onClick={handleQuestionSubmit} disabled={loading}>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full my-2" onClick={handleQuestionSubmit} disabled={loading}>
         {loading ? 'Loading...' : 'Submit'}
       </button>
       {answer && (
